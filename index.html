@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>מחשבון עלות רכישת דירה</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>מחשבון עלות רכישת דירה</h1>
+
+  <form id="calcForm">
+    <fieldset>
+      <label>🔹 סוג דירה:</label>
+      <select id="type">
+        <option value="first">דירה ראשונה</option>
+        <option value="replacement">דירה חלופית</option>
+        <option value="investment">דירה להשקעה</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <label>💰 הון עצמי (₪):</label>
+      <input type="number" id="equity" required />
+    </fieldset>
+
+    <fieldset>
+      <label>💸 יכולת החזר חודשית (₪):</label>
+      <input type="number" id="monthly" required />
+    </fieldset>
+
+    <fieldset>
+      <label>📈 ריבית שנתית (%):</label>
+      <input type="number" id="interest" step="0.01" value="4.5" />
+    </fieldset>
+
+    <fieldset>
+      <label>⏳ תקופת משכנתא (שנים):</label>
+      <input type="number" id="years" value="25" />
+    </fieldset>
+
+    <fieldset>
+      <label>🏠 האם יש תיווך? אם כן, %:</label>
+      <input type="number" id="broker" step="0.1" placeholder="ללא → השאר ריק" />
+    </fieldset>
+
+    <button type="submit">חשב עלות כוללת</button>
+  </form>
+
+  <div id="result"></div>
+  <div id="chartContainer">
+    <canvas id="costChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
